@@ -9,6 +9,7 @@
   opacity: 0.9;
   color: #fff !important;
   font-family: 'Noto Sans JP', sans-serif !important;
+  border-radius: 0 !important;
 }
 
 .bg-h2 {
@@ -16,6 +17,9 @@
   color: #FFF;
 }
 
+.card {
+  border-radius: 0 !important;
+}
 
 /*
  * Base structure
