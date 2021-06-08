@@ -11,26 +11,32 @@
   font-family: 'Noto Sans JP', sans-serif !important;
 }
 
+.bg-h2 {
+  background: #CD2532 !important;
+  color: #FFF;
+}
+
 
 /*
  * Base structure
  */
-
 body {
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+.body-home {
   background-image: url('home_hero_bg.png');
   background-repeat: no-repeat;
   background-position: 60% 100%;
-  font-family: 'Noto Sans JP', sans-serif;
 }
 
-h1 {
+.body-home h1 {
   font-family: 'Noto Serif JP', serif;
 }
 
 .cover-container {
   max-width: 70em;
 }
-
 
 /*
  * Header
@@ -39,15 +45,13 @@ h1 {
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
-  color: #FFF;
   background-color: transparent;
   border-bottom: .25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  color: #FFF;
-  border-bottom-color:#CD2532;
+  border-bottom-color: #CD2532;
 }
 
 .nav-masthead .nav-link + .nav-link {
@@ -59,7 +63,35 @@ h1 {
   border-bottom-color: #fff;
 }
 
+.link-white .nav-link {
+  color: #FFF !important;
+}
+
+.link-white .nav-link:hover,
+.link-white .nav-link:focus {
+  color: #FFF !important;
+}
+
+.link-dark .nav-link {
+  color: #333 !important;
+}
+
+.link-dark .nav-link:hover,
+.link-dark .nav-link:focus {
+  color: #333 !important;
+}
+
 .lead {
   font-size: 1.5rem !important;
   font-weight: 400 !important;
+}
+
+/* Table */
+
+table th {
+  border-bottom: 1px solid #6BBDEA;
+}
+
+footer {
+  background: #333;
 }

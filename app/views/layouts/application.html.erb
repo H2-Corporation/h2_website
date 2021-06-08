@@ -12,24 +12,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
-      
-  <body class="d-flex h-100 text-center">
+  <% unless current_page?(root_path) %>
+  <body>
+    <header class="cover-container m-auto p-3">
+      <nav class="navbar navbar-expand-lg nav-masthead navbar-light bg-white link-dark">
+        <a class="navbar-brand" href="/"><%= image_tag('logo.png', height: '50') %>
+</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to '企業情報', pages_company_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to '採用情報', pages_careers_path, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <%= yield %>
+    <footer class="mt-5 py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <nav class="nav flex-column link-white">
+              <%= link_to 'ホーム', root_path, class: 'nav-link' %>
+              <%= link_to '企業情報', pages_company_path, class: 'nav-link' %>
+              <%= link_to '採用情報', pages_careers_path, class: "nav-link" %>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <% else %>
+  <body class="body-home d-flex h-100">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
-        <nav class="navbar navbar-expand-lg nav-masthead text-white">
-          <div class="container">
-            <a class="navbar-brand"><%= image_tag('logo.png', height: '32') %>
+        <nav class="navbar navbar-expand-lg nav-masthead navbar-dark link-white">
+          <a class="navbar-brand" href="/"><%= image_tag('logo.png', height: '50') %>
 </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">採用情報</a>
-                </li>
-              </ul>
-            </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <%= link_to '企業情報', pages_company_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '採用情報', pages_careers_path, class: "nav-link" %>
+              </li>
+            </ul>
           </div>
         </nav>
       </header>
@@ -39,4 +76,5 @@
       </footer>
     </div>
   </body>
+  <% end %>
 </html>
