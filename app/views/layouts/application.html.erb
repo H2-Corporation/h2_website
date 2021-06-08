@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-100">
   <head>
-    <title>H2 Corporation</title>
+    <title><%= yield(:title) %> | 株式会社H2Corporation</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -34,14 +34,20 @@
       </nav>
     </header>
     <%= yield %>
-    <footer class="mt-5 py-5">
+    <footer class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="offset-md-1 col-md-3">
             <nav class="nav flex-column link-white">
               <%= link_to 'ホーム', root_path, class: 'nav-link' %>
               <%= link_to '企業情報', pages_company_path, class: 'nav-link' %>
               <%= link_to '採用情報', pages_careers_path, class: "nav-link" %>
+            </nav>
+          </div>
+          <div class="col-md-3">
+            <nav class="nav flex-column link-white">
+              <%= link_to '個人情報保護方', pages_privacy_path, class: 'nav-link' %>
+              <%= link_to '情報セキュリティ基本方針', pages_security_path, class: "nav-link" %>
             </nav>
           </div>
         </div>

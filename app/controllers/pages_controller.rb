@@ -7,4 +7,10 @@ class PagesController < ApplicationController
   
   def careers
   end
+  
+  def privacy
+  end
+  
+  def security
+  end
 end
